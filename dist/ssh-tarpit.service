@@ -1,0 +1,18 @@
+[Unit]
+Description=SSH tarpit
+Wants=network-online.target
+After=network.target network-online.target
+
+[Service]
+User=root
+Type=simple
+WorkingDirectory=/tmp/
+PrivateTmp=true
+ExecStart=/usr/local/bin/ssh_tarpit
+RestartSec=5
+
+# keep retrying no matter what
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
