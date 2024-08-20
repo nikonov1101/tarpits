@@ -1,0 +1,14 @@
+tarpits
+=======
+
+Keep script-kiddies busy, inspired by this article:
+https://nullprogram.com/blog/2019/03/22/
+
+At the moment of publishing this repo (20 aug 2024),
+this code runs on 2 of my DigitalOcean's machines
+for about 3 days, and what I've got:
+
+* trapped about 25k connections,
+* about 2Gb of meaningless traffic sent,
+* got 234 *simultaneous* ssh connections to a single machine,
+* the longest connection was open for about 3 hours.

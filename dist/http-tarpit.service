@@ -1,5 +1,5 @@
 [Unit]
-Description=SSH tarpit
+Description=HTTP tarpit
 Wants=network-online.target
 After=network.target network-online.target
 
@@ -8,8 +8,8 @@ User=root
 Type=simple
 WorkingDirectory=/tmp/
 PrivateTmp=true
-# bind to default ssh port, expose metrics port for a trusted local network
-ExecStart=/usr/local/bin/ssh_tarpit -ssh=":22" -prom="10.0.0.123:5001"
+# bind to default http port, expose metrics port for a trusted local network
+ExecStart=/usr/local/bin/http_tarpit -ssh=":80" -prom="10.0.0.123:5002"
 RestartSec=5
 
 # keep retrying no matter what
